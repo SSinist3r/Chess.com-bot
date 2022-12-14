@@ -1,0 +1,8 @@
+opencv-python
+configparser
+chess
+numpy
+pyautogui
+pillow
+keyboard
+pypiwin32

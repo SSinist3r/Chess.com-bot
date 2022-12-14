@@ -1,0 +1,14 @@
+*.log
+*.exe
+stockfish_path/sf13/
+stockfish_path/DS_Store/
+board_result.jpg/
+pictures/screen.png/
+pictures/turn_screen.png/
+logs/chessbot_logger.txt
+pictures/turn_screen.png
+pictures/screen.png
+pictures/board_detection.png
+pictures/check_detection.png
+__pycache__/
+old_Backup/
