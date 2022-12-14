@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>830</width>
-    <height>661</height>
+    <height>679</height>
    </rect>
   </property>
   <property name="palette">
@@ -54,14 +54,20 @@
    <widget class="QPushButton" name="b_detect">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>210</y>
-      <width>191</width>
+      <x>410</x>
+      <y>550</y>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="statusTip">
+     <string>ALT+D</string>
+    </property>
     <property name="text">
      <string>Detect board</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+D</string>
     </property>
    </widget>
    <widget class="QPushButton" name="b_start">
@@ -73,15 +79,21 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="statusTip">
+     <string>ALT+S</string>
+    </property>
     <property name="text">
      <string>Start bot</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+S</string>
     </property>
    </widget>
    <widget class="QPushButton" name="b_quit">
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>580</y>
+      <y>590</y>
       <width>191</width>
       <height>31</height>
      </rect>
@@ -93,14 +105,20 @@
    <widget class="QPushButton" name="b_quickDetect">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>580</y>
-      <width>191</width>
+      <x>410</x>
+      <y>590</y>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="statusTip">
+     <string>ALT+Q</string>
+    </property>
     <property name="text">
      <string>Quick Detect Board</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+Q</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="box_automove">
@@ -753,11 +771,16 @@
    <widget class="QLabel" name="label_board_found">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>551</y>
-      <width>111</width>
-      <height>16</height>
+      <x>210</x>
+      <y>550</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Board not detected</string>
@@ -771,12 +794,18 @@
      <rect>
       <x>40</x>
       <y>550</y>
-      <width>121</width>
-      <height>20</height>
+      <width>151</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="statusTip">
+     <string>ALT+C</string>
     </property>
     <property name="text">
      <string>Check detection</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+C</string>
     </property>
    </widget>
    <widget class="QSlider" name="slider_delay">
@@ -908,6 +937,28 @@
      <string>Skills (0):</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="b_stop">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>210</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>ALT+X</string>
+    </property>
+    <property name="text">
+     <string>Stop bot</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+X</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -919,7 +970,11 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 0, 0)</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

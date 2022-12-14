@@ -444,10 +444,13 @@ class GUI(QMainWindow):
         self.show()
         self.set_label_text("")
         self.b_start.setEnabled(False)
+        self.b_stop.setEnabled(False)
+
         
         self.board_detected = False
         
         self.b_start.clicked.connect(self.start_bot)
+        self.b_stop.clicked.connect(self.stop_bot)
         self.b_quit.clicked.connect(self.quit_programm)
         self.b_detect.clicked.connect(self.detect_board)
         self.b_quickDetect.clicked.connect(self.quick_detect_board)
@@ -526,7 +529,8 @@ class GUI(QMainWindow):
             self.started = True
             self.set_label_text("")
             self.b_quickDetect.setEnabled(False)
-            self.b_start.setText("Stop bot")
+            self.b_start.setEnabled(False)
+            self.b_stop.setEnabled(True)
             self.b_detect.setEnabled(False)
             
             self.manager = Manager(self, self.logger, self.checkbox_automove_isChecked(), self.checkbox_randomdelay_isChecked(),
@@ -565,20 +569,24 @@ class GUI(QMainWindow):
             )
             
             self.thread.finished.connect(
-                lambda: self.b_start.setText("Start bot")
+                lambda: self.b_start.setEnabled(True)
+            )
+            self.thread.finished.connect(
+                lambda: self.b_stop.setEnabled(False)
             )
             self.manager.stopped_bot.connect(
                 lambda: self.show_image('pictures/board_detection.png')
             )
             self.at_finish()
-            
-
-
         else:
             self.logger.info("Stop button pressed")
             self.started = False
             self.stopped.emit()
         
+    def stop_bot(self):
+        self.logger.info("Stop button pressed")
+        self.started = False
+        self.stopped.emit()
             
     def board_found(self, found):
         if found:
